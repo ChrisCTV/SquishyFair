@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#090610" />
+  <meta name="description" content="Squishy Fair — community-powered squishy sightings." />
+  <title>Squishy Fair</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell" aria-live="polite">
+    <div class="aurora aurora-one"></div>
+    <div class="aurora aurora-two"></div>
+    <div class="noise"></div>
+
+    <header class="topbar">
+      <button class="back-button" type="button" aria-label="Previous screen">
+        <span aria-hidden="true">‹</span>
+      </button>
+      <div class="journey-label" id="journeyLabel">Your Hunt</div>
+      <button class="skip-button" type="button">Skip</button>
+    </header>
+
+    <nav class="progress" aria-label="Onboarding progress">
+      <button class="progress-segment active" type="button" data-step="0" aria-label="Step 1"></button>
+      <button class="progress-segment" type="button" data-step="1" aria-label="Step 2"></button>
+      <button class="progress-segment" type="button" data-step="2" aria-label="Step 3"></button>
+      <button class="progress-segment" type="button" data-step="3" aria-label="Step 4"></button>
+    </nav>
+
+    <section class="slides" aria-label="Squishy Fair introduction">
+      <article class="slide active" data-title="Your Hunt">
+        <div class="copy-block">
+          <p class="eyebrow">SQUISHY FAIR</p>
+          <h1>Find squishies.<br />Fair for all.</h1>
+          <p class="lead">Community sightings keep our map <strong>live</strong> and <strong>honest</strong>.</p>
+        </div>
+
+        <div class="art-stage radar-art" aria-label="A glowing community map with squishy sightings">
+          <div class="map-grid"></div>
+          <div class="route route-one"></div>
+          <div class="route route-two"></div>
+          <div class="pin pin-main"><span>★</span></div>
+          <div class="pin pin-left"><span>★</span></div>
+          <div class="pin pin-right"><span>★</span></div>
+          <div class="mini-pin mini-one"></div>
+          <div class="mini-pin mini-two"></div>
+          <div class="mini-pin mini-three"></div>
+          <div class="spark spark-one">✦</div>
+          <div class="spark spark-two">✦</div>
+          <div class="spark spark-three">✦</div>
+          <div class="mascot mascot-round" aria-hidden="true">
+            <div class="ear left"></div><div class="ear right"></div>
+            <div class="eye left"></div><div class="eye right"></div>
+            <div class="cheek left"></div><div class="cheek right"></div>
+            <div class="smile"></div>
+          </div>
+        </div>
+
+        <div class="glass-card stats-card">
+          <div class="card-title">LIVE COMMUNITY DATA</div>
+          <div class="stats-grid">
+            <div><span class="stat-icon">◉</span><strong>1,248</strong><small>Sightings today</small></div>
+            <div><span class="stat-icon">⌂</span><strong>342</strong><small>Stores tracked</small></div>
+            <div><span class="stat-icon">◎</span><strong>18,672</strong><small>Hunters online</small></div>
+            <div><span class="stat-icon">✓</span><strong>98%</strong><small>Accuracy</small></div>
+          </div>
+          <div class="card-footer">
+            <div><span>POWERED BY COLLECTORS</span><p>Real people. Real time. Real squishies.</p></div>
+            <div class="people-mark">♡</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="slide" data-title="See It Live">
+        <div class="copy-block">
+          <p class="eyebrow">LIVE SIGHTINGS</p>
+          <h1>Fresh finds<br />pulse pink.</h1>
+          <p class="lead">Bright pins mean a collector recently confirmed squishies are still on the shelf.</p>
+        </div>
+
+        <div class="art-stage shelf-art" aria-label="A glowing store shelf with squishies">
+          <div class="store-sign">FIVE BELOW</div>
+          <div class="shelf shelf-top"></div>
+          <div class="shelf shelf-bottom"></div>
+          <div class="squishy ghost"><span>boo</span></div>
+          <div class="squishy dumpling"><span>•ᴗ•</span></div>
+          <div class="squishy butter"><span>butter</span></div>
+          <div class="scan-beam"></div>
+          <div class="availability-chip"><i></i> Confirmed 8 min ago</div>
+        </div>
+
+        <div class="glass-card feature-card">
+          <div class="feature-icon">⌖</div>
+          <div><span>THE FAIR SIGNAL</span><h2>Pulse strength fades with time.</h2><p>New reports glow brightest. Old sightings automatically dim until someone checks again.</p></div>
+        </div>
+      </article>
+
+      <article class="slide" data-title="Share the Find">
+        <div class="copy-block">
+          <p class="eyebrow">ONE-TAP REPORTING</p>
+          <h1>See it.<br />Share it.</h1>
+          <p class="lead">A photo, a store, and one quick quantity check help the whole community.</p>
+        </div>
+
+        <div class="art-stage phone-art" aria-label="A phone posting a squishy sighting">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="camera-view">
+              <div class="camera-squishy"><span>★</span></div>
+              <div class="focus-corner tl"></div><div class="focus-corner tr"></div>
+              <div class="focus-corner bl"></div><div class="focus-corner br"></div>
+            </div>
+            <div class="phone-copy"><strong>NeeDoh Glow Ghost</strong><small>Target · Marlborough</small></div>
+            <div class="post-pill">POST SIGHTING</div>
+          </div>
+          <div class="upload-ring ring-one"></div>
+          <div class="upload-ring ring-two"></div>
+          <div class="floating-check">✓</div>
+        </div>
+
+        <div class="glass-card steps-card">
+          <div><b>1</b><span>Snap</span></div>
+          <i></i>
+          <div><b>2</b><span>Confirm</span></div>
+          <i></i>
+          <div><b>3</b><span>Help everyone</span></div>
+        </div>
+      </article>
+
+      <article class="slide" data-title="Keep It Fair">
+        <div class="copy-block">
+          <p class="eyebrow">COMMUNITY FIRST</p>
+          <h1>Find the squish.<br />Leave some joy.</h1>
+          <p class="lead">Accurate reporting, trusted members, and a no-hoarding culture keep the hunt fun.</p>
+        </div>
+
+        <div class="art-stage heart-art" aria-label="Collectors connected around a glowing heart">
+          <div class="orbit orbit-a"></div>
+          <div class="orbit orbit-b"></div>
+          <div class="heart-core">♡</div>
+          <div class="avatar avatar-one">C</div>
+          <div class="avatar avatar-two">E</div>
+          <div class="avatar avatar-three">S</div>
+          <div class="avatar avatar-four">★</div>
+          <div class="fair-badge"><span>✓</span> FAIR FINDER</div>
+        </div>
+
+        <div class="glass-card promise-card">
+          <p class="card-title">THE SQUISHY FAIR PROMISE</p>
+          <ul>
+            <li><span>✓</span> Report honestly</li>
+            <li><span>✓</span> Update sold-out shelves</li>
+            <li><span>✓</span> Save some for the next collector</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <div class="bottom-actions">
+      <button class="primary-button" type="button" id="continueButton">Continue</button>
+      <p class="microcopy">Community-powered. Collector-approved.</p>
+    </div>
+
+    <section class="welcome-screen" aria-hidden="true">
+      <div class="welcome-mark">★</div>
+      <p class="eyebrow">WELCOME TO</p>
+      <h1>Squishy Fair</h1>
+      <p>Live sightings. Fair finds. Happy collectors.</p>
+      <button type="button" id="restartButton">Replay introduction</button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
