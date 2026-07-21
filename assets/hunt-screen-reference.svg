@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1180" role="img" aria-labelledby="t d">
+<title id="t">Squishy Fair approved hunt-screen artwork</title><desc id="d">Dark purple mobile screen with neon pink map pins, a friendly purple plush mascot, and a live community data card.</desc>
+<defs>
+<radialGradient id="bg"><stop stop-color="#28122f"/><stop offset="1" stop-color="#090711"/></radialGradient>
+<linearGradient id="pin" x1="0" x2="1" y2="1"><stop stop-color="#ff82cd"/><stop offset=".55" stop-color="#ff3da2"/><stop offset="1" stop-color="#a51168"/></linearGradient>
+<radialGradient id="fur"><stop stop-color="#b14a9c"/><stop offset=".6" stop-color="#7f2f75"/><stop offset="1" stop-color="#4b1d4d"/></radialGradient>
+<filter id="glow"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#000" flood-opacity=".45"/></filter>
+<pattern id="grid" width="70" height="70" patternUnits="userSpaceOnUse"><path d="M70 0H0V70" fill="none" stroke="#8f3d9d" stroke-opacity=".14" stroke-width="2"/></pattern>
+</defs>
+<rect width="900" height="1180" fill="url(#bg)"/>
+<rect width="900" height="1180" fill="url(#grid)" opacity=".35"/>
+<g fill="#fff" opacity=".8"><circle cx="100" cy="350" r="4"/><circle cx="746" cy="300" r="5"/><circle cx="650" cy="430" r="3"/><circle cx="315" cy="390" r="3"/></g>
+<g fill="none" stroke="#ff4aad" stroke-width="7" stroke-linecap="round" stroke-dasharray="10 18" filter="url(#glow)"><path d="M135 510C260 570 220 720 390 700S565 520 700 575"/></g>
+<g filter="url(#glow)">
+<g transform="translate(85 345) scale(.9)"><path d="M0 0C0-43 35-78 78-78S156-43 156 0c0 61-78 143-78 143S0 61 0 0Z" fill="url(#pin)"/><circle cx="78" cy="0" r="43" fill="#29122f"/><path d="M78-23l8 17 19 2-14 13 4 19-17-9-17 9 4-19-14-13 19-2z" fill="#ff9bd4"/></g>
+<g transform="translate(346 465) scale(1.24)"><path d="M0 0C0-43 35-78 78-78S156-43 156 0c0 61-78 143-78 143S0 61 0 0Z" fill="url(#pin)"/><circle cx="78" cy="0" r="43" fill="#29122f"/><path d="M78-23l8 17 19 2-14 13 4 19-17-9-17 9 4-19-14-13 19-2z" fill="#ff9bd4"/></g>
+<g transform="translate(615 315) scale(.82)"><path d="M0 0C0-43 35-78 78-78S156-43 156 0c0 61-78 143-78 143S0 61 0 0Z" fill="url(#pin)"/><circle cx="78" cy="0" r="43" fill="#29122f"/><path d="M78-23l8 17 19 2-14 13 4 19-17-9-17 9 4-19-14-13 19-2z" fill="#ff9bd4"/></g>
+</g>
+<g fill="none" stroke="#ff4aad" opacity=".5"><ellipse cx="155" cy="512" rx="105" ry="38" stroke-width="6"/><ellipse cx="443" cy="690" rx="132" ry="48" stroke-width="7"/><ellipse cx="682" cy="455" rx="92" ry="33" stroke-width="5"/></g>
+<g transform="translate(610 560)" filter="url(#shadow)">
+<path d="M38 64Q20 12 70 22Q92-10 126 18Q164 4 177 39Q220 26 224 75Q250 107 219 135Q208 180 162 170Q132 198 100 172Q56 183 43 143Q5 124 24 90Z" fill="url(#fur)" stroke="#ff68bb" stroke-width="8"/>
+<path d="M58 42Q69 8 101 27M165 28Q202 5 207 52" fill="none" stroke="#ff68bb" stroke-width="9" stroke-linecap="round"/>
+<ellipse cx="82" cy="103" rx="12" ry="18" fill="#14091a"/><ellipse cx="173" cy="103" rx="12" ry="18" fill="#14091a"/><circle cx="78" cy="97" r="4" fill="#fff"/><circle cx="169" cy="97" r="4" fill="#fff"/>
+<ellipse cx="55" cy="125" rx="17" ry="10" fill="#ff3d9d"/><ellipse cx="202" cy="125" rx="17" ry="10" fill="#ff3d9d"/>
+<path d="M105 130Q128 154 151 130M113 132l-10-8M143 132l10-8" fill="none" stroke="#160a1c" stroke-width="8" stroke-linecap="round"/>
+</g>
+<g transform="translate(64 795)" filter="url(#shadow)"><rect width="772" height="310" rx="34" fill="#1a1021" fill-opacity=".88" stroke="#8a506f" stroke-width="2"/><text x="386" y="64" text-anchor="middle" fill="#ff52ad" font-family="monospace" font-size="28" font-weight="700" letter-spacing="4">LIVE COMMUNITY DATA</text>
+<g font-family="Arial,sans-serif" text-anchor="middle"><g transform="translate(100 105)"><circle cx="0" cy="15" r="24" fill="none" stroke="#ff52ad" stroke-width="7"/><circle cx="0" cy="15" r="8" fill="#ff52ad"/><text x="0" y="90" fill="#fff" font-size="42" font-weight="700">1,248</text><text x="0" y="130" fill="#d7cbdc" font-size="23">Sightings</text><text x="0" y="159" fill="#9e8fa6" font-size="21">Today</text></g>
+<g transform="translate(290 105)"><path d="M-28 0H28L23 23Q0 39-23 23Z" fill="none" stroke="#ff52ad" stroke-width="7"/><path d="M-22 28V60H22V28" fill="none" stroke="#ff52ad" stroke-width="7"/><text x="0" y="90" fill="#fff" font-size="42" font-weight="700">342</text><text x="0" y="130" fill="#d7cbdc" font-size="23">Stores</text><text x="0" y="159" fill="#9e8fa6" font-size="21">Tracked</text></g>
+<g transform="translate(482 105)"><circle cx="-15" cy="14" r="17" fill="none" stroke="#ff52ad" stroke-width="6"/><circle cx="19" cy="14" r="17" fill="none" stroke="#ff52ad" stroke-width="6"/><path d="M-45 60Q-30 32 0 47Q32 31 49 60" fill="none" stroke="#ff52ad" stroke-width="6"/><text x="0" y="90" fill="#fff" font-size="42" font-weight="700">18,672</text><text x="0" y="130" fill="#d7cbdc" font-size="23">Hunters</text><text x="0" y="159" fill="#9e8fa6" font-size="21">Online</text></g>
+<g transform="translate(672 105)"><path d="M0-4l12 9 15-2 3 15 12 9-9 13 2 15-15 3-9 12-13-9-15 2-3-15-12-9 9-13-2-15 15-3Z" fill="none" stroke="#ff52ad" stroke-width="6"/><path d="M-12 30l9 9 18-21" fill="none" stroke="#ff52ad" stroke-width="6"/><text x="0" y="90" fill="#fff" font-size="42" font-weight="700">98%</text><text x="0" y="130" fill="#d7cbdc" font-size="23">Community</text><text x="0" y="159" fill="#9e8fa6" font-size="21">Accuracy</text></g></g>
+<path d="M50 225H722" stroke="#8f3667" stroke-width="2"/><text x="50" y="272" fill="#ff52ad" font-family="monospace" font-size="25" font-weight="700" letter-spacing="3">POWERED BY COLLECTORS</text><text x="50" y="305" fill="#fff" font-family="Arial,sans-serif" font-size="23">Real people. Real time. Real squishies.</text></g>
+</svg>
