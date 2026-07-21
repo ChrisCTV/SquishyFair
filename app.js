@@ -1,89 +1,67 @@
-const slides = [...document.querySelectorAll('.slide')];
-const progress = [...document.querySelectorAll('.progress-segment')];
-const journeyLabel = document.getElementById('journeyLabel');
-const continueButton = document.getElementById('continueButton');
-const backButton = document.querySelector('.back-button');
-const skipButton = document.querySelector('.skip-button');
-const welcomeScreen = document.querySelector('.welcome-screen');
-const restartButton = document.getElementById('restartButton');
+const screens=[...document.querySelectorAll('.screen')];
+const nav=document.querySelector('.bottom-nav');
+const toast=document.getElementById('toast');
+const sheet=document.getElementById('storeSheet');
+const storeName=document.getElementById('storeName');
 
-let currentStep = 0;
+function showScreen(id){
+  screens.forEach(screen=>screen.classList.toggle('active',screen.id===id));
+  nav.classList.toggle('visible',id!=='onboarding');
+  nav.querySelectorAll('[data-open]').forEach(button=>button.classList.toggle('active',button.dataset.open===id));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 
-function renderStep(step) {
-  currentStep = Math.max(0, Math.min(step, slides.length - 1));
+function notify(message){
+  toast.textContent=message;
+  toast.classList.add('show');
+  setTimeout(()=>toast.classList.remove('show'),2200);
+}
 
-  slides.forEach((slide, index) => {
-    slide.classList.toggle('active', index === currentStep);
+function openStore(name){
+  storeName.textContent=name;
+  sheet.classList.add('open');
+  sheet.setAttribute('aria-hidden','false');
+}
+
+document.querySelectorAll('[data-open]').forEach(button=>{
+  button.addEventListener('click',()=>showScreen(button.dataset.open));
+});
+
+document.getElementById('enterApp').addEventListener('click',()=>showScreen('home'));
+document.getElementById('skipIntro').addEventListener('click',()=>showScreen('home'));
+document.querySelectorAll('[data-store]').forEach(item=>item.addEventListener('click',()=>openStore(item.dataset.store)));
+document.querySelector('.close-sheet').addEventListener('click',()=>sheet.classList.remove('open'));
+
+document.getElementById('stillHere').addEventListener('click',()=>{
+  sheet.classList.remove('open');
+  notify('Thanks — sighting refreshed!');
+});
+
+document.getElementById('soldOut').addEventListener('click',()=>{
+  sheet.classList.remove('open');
+  notify('Marked sold out. Thank you!');
+});
+
+document.getElementById('cameraButton').addEventListener('click',()=>notify('Camera connection comes in the next build'));
+
+document.querySelectorAll('.quantity button').forEach((button,index)=>{
+  button.addEventListener('click',()=>{
+    const qty=document.getElementById('qty');
+    const next=Math.max(0,Number(qty.textContent)+(index===0?-1:1));
+    qty.textContent=next;
   });
+});
 
-  progress.forEach((segment, index) => {
-    segment.classList.toggle('active', index === currentStep);
-    segment.classList.toggle('complete', index < currentStep);
-    segment.setAttribute('aria-current', index === currentStep ? 'step' : 'false');
+document.getElementById('postReport').addEventListener('click',()=>{
+  notify('Sighting posted live!');
+  setTimeout(()=>showScreen('map'),700);
+});
+
+document.querySelectorAll('.chips button').forEach(button=>{
+  button.addEventListener('click',()=>{
+    document.querySelectorAll('.chips button').forEach(item=>item.classList.remove('active'));
+    button.classList.add('active');
   });
-
-  journeyLabel.textContent = slides[currentStep].dataset.title;
-  continueButton.textContent = currentStep === slides.length - 1 ? 'Enter Squishy Fair' : 'Continue';
-  backButton.style.opacity = currentStep === 0 ? '0.35' : '1';
-  backButton.disabled = currentStep === 0;
-  skipButton.style.visibility = currentStep === slides.length - 1 ? 'hidden' : 'visible';
-
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function enterApp() {
-  welcomeScreen.classList.add('visible');
-  welcomeScreen.setAttribute('aria-hidden', 'false');
-  restartButton.focus();
-}
-
-continueButton.addEventListener('click', () => {
-  if (currentStep < slides.length - 1) {
-    renderStep(currentStep + 1);
-  } else {
-    enterApp();
-  }
 });
 
-backButton.addEventListener('click', () => renderStep(currentStep - 1));
-skipButton.addEventListener('click', () => renderStep(slides.length - 1));
-
-progress.forEach((segment) => {
-  segment.addEventListener('click', () => renderStep(Number(segment.dataset.step)));
-});
-
-restartButton.addEventListener('click', () => {
-  welcomeScreen.classList.remove('visible');
-  welcomeScreen.setAttribute('aria-hidden', 'true');
-  renderStep(0);
-  continueButton.focus();
-});
-
-let touchStartX = 0;
-let touchEndX = 0;
-
-function handleSwipe() {
-  const distance = touchEndX - touchStartX;
-  if (Math.abs(distance) < 55) return;
-  if (distance < 0 && currentStep < slides.length - 1) renderStep(currentStep + 1);
-  if (distance > 0 && currentStep > 0) renderStep(currentStep - 1);
-}
-
-document.addEventListener('touchstart', (event) => {
-  touchStartX = event.changedTouches[0].screenX;
-}, { passive: true });
-
-document.addEventListener('touchend', (event) => {
-  touchEndX = event.changedTouches[0].screenX;
-  handleSwipe();
-}, { passive: true });
-
-document.addEventListener('keydown', (event) => {
-  if (welcomeScreen.classList.contains('visible')) return;
-  if (event.key === 'ArrowRight') {
-    currentStep === slides.length - 1 ? enterApp() : renderStep(currentStep + 1);
-  }
-  if (event.key === 'ArrowLeft' && currentStep > 0) renderStep(currentStep - 1);
-});
-
-renderStep(0);
+showScreen('onboarding');
