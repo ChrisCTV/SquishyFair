@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#090610" />
-  <meta name="description" content="Squishy Fair — community-powered squishy sightings." />
+  <meta name="description" content="Squishy Fair — live community squishy sightings." />
   <title>Squishy Fair</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,169 +12,84 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="app-shell" aria-live="polite">
-    <div class="aurora aurora-one"></div>
-    <div class="aurora aurora-two"></div>
-    <div class="noise"></div>
+  <main class="app-shell">
+    <div class="aurora aurora-a"></div><div class="aurora aurora-b"></div><div class="stars"></div>
 
-    <header class="topbar">
-      <button class="back-button" type="button" aria-label="Previous screen">
-        <span aria-hidden="true">‹</span>
+    <section class="screen onboarding active" id="onboarding">
+      <div class="brand-row"><span class="logo-orb">✦</span><span>SQUISHY FAIR</span><button id="skipIntro">Skip</button></div>
+      <div class="hero-copy">
+        <p class="eyebrow">THE LIVE SQUISH RADAR</p>
+        <h1>Find the magic.<br><em>Share the joy.</em></h1>
+        <p>Fresh community sightings turn nearby stores into a glowing treasure map.</p>
+      </div>
+      <div class="artwork hero-art" aria-label="Floating squishy friends above a glowing radar">
+        <div class="radar"><i></i><i></i><i></i><span class="sweep"></span></div>
+        <div class="squish moon"><b>•ᴗ•</b></div>
+        <div class="squish cat"><span></span><b>˶ᵔ ᵕ ᵔ˶</b></div>
+        <div class="squish ghost"><b>boo!</b></div>
+        <div class="pin p1">★</div><div class="pin p2">★</div><div class="pin p3">★</div>
+      </div>
+      <div class="intro-card glass">
+        <div><strong>1,248</strong><span>finds today</span></div><div><strong>342</strong><span>stores</span></div><div><strong>98%</strong><span>trusted</span></div>
+      </div>
+      <button class="primary" id="enterApp">Enter Squishy Fair</button>
+      <p class="micro">Community-powered · Fair for everyone</p>
+    </section>
+
+    <section class="screen home" id="home">
+      <header class="app-header"><div><p class="eyebrow">GOOD EVENING</p><h2>Ready to hunt?</h2></div><button class="avatar">C</button></header>
+      <div class="search glass"><span>⌕</span><input aria-label="Search squishies or stores" placeholder="Search squishies or stores" /></div>
+      <button class="radar-card" data-open="map">
+        <div><p class="eyebrow">LIVE NEAR MARLBOROUGH</p><h3>3 fresh sightings</h3><span>Open live radar →</span></div>
+        <div class="mini-radar"><i></i><i></i><b></b><span></span></div>
       </button>
-      <div class="journey-label" id="journeyLabel">Your Hunt</div>
-      <button class="skip-button" type="button">Skip</button>
-    </header>
-
-    <nav class="progress" aria-label="Onboarding progress">
-      <button class="progress-segment active" type="button" data-step="0" aria-label="Step 1"></button>
-      <button class="progress-segment" type="button" data-step="1" aria-label="Step 2"></button>
-      <button class="progress-segment" type="button" data-step="2" aria-label="Step 3"></button>
-      <button class="progress-segment" type="button" data-step="3" aria-label="Step 4"></button>
-    </nav>
-
-    <section class="slides" aria-label="Squishy Fair introduction">
-      <article class="slide active" data-title="Your Hunt">
-        <div class="copy-block">
-          <p class="eyebrow">SQUISHY FAIR</p>
-          <h1>Find squishies.<br />Fair for all.</h1>
-          <p class="lead">Community sightings keep our map <strong>live</strong> and <strong>honest</strong>.</p>
-        </div>
-
-        <div class="art-stage radar-art" aria-label="A glowing community map with squishy sightings">
-          <div class="map-grid"></div>
-          <div class="route route-one"></div>
-          <div class="route route-two"></div>
-          <div class="pin pin-main"><span>★</span></div>
-          <div class="pin pin-left"><span>★</span></div>
-          <div class="pin pin-right"><span>★</span></div>
-          <div class="mini-pin mini-one"></div>
-          <div class="mini-pin mini-two"></div>
-          <div class="mini-pin mini-three"></div>
-          <div class="spark spark-one">✦</div>
-          <div class="spark spark-two">✦</div>
-          <div class="spark spark-three">✦</div>
-          <div class="mascot mascot-round" aria-hidden="true">
-            <div class="ear left"></div><div class="ear right"></div>
-            <div class="eye left"></div><div class="eye right"></div>
-            <div class="cheek left"></div><div class="cheek right"></div>
-            <div class="smile"></div>
-          </div>
-        </div>
-
-        <div class="glass-card stats-card">
-          <div class="card-title">LIVE COMMUNITY DATA</div>
-          <div class="stats-grid">
-            <div><span class="stat-icon">◉</span><strong>1,248</strong><small>Sightings today</small></div>
-            <div><span class="stat-icon">⌂</span><strong>342</strong><small>Stores tracked</small></div>
-            <div><span class="stat-icon">◎</span><strong>18,672</strong><small>Hunters online</small></div>
-            <div><span class="stat-icon">✓</span><strong>98%</strong><small>Accuracy</small></div>
-          </div>
-          <div class="card-footer">
-            <div><span>POWERED BY COLLECTORS</span><p>Real people. Real time. Real squishies.</p></div>
-            <div class="people-mark">♡</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="slide" data-title="See It Live">
-        <div class="copy-block">
-          <p class="eyebrow">LIVE SIGHTINGS</p>
-          <h1>Fresh finds<br />pulse pink.</h1>
-          <p class="lead">Bright pins mean a collector recently confirmed squishies are still on the shelf.</p>
-        </div>
-
-        <div class="art-stage shelf-art" aria-label="A glowing store shelf with squishies">
-          <div class="store-sign">FIVE BELOW</div>
-          <div class="shelf shelf-top"></div>
-          <div class="shelf shelf-bottom"></div>
-          <div class="squishy ghost"><span>boo</span></div>
-          <div class="squishy dumpling"><span>•ᴗ•</span></div>
-          <div class="squishy butter"><span>butter</span></div>
-          <div class="scan-beam"></div>
-          <div class="availability-chip"><i></i> Confirmed 8 min ago</div>
-        </div>
-
-        <div class="glass-card feature-card">
-          <div class="feature-icon">⌖</div>
-          <div><span>THE FAIR SIGNAL</span><h2>Pulse strength fades with time.</h2><p>New reports glow brightest. Old sightings automatically dim until someone checks again.</p></div>
-        </div>
-      </article>
-
-      <article class="slide" data-title="Share the Find">
-        <div class="copy-block">
-          <p class="eyebrow">ONE-TAP REPORTING</p>
-          <h1>See it.<br />Share it.</h1>
-          <p class="lead">A photo, a store, and one quick quantity check help the whole community.</p>
-        </div>
-
-        <div class="art-stage phone-art" aria-label="A phone posting a squishy sighting">
-          <div class="phone-frame">
-            <div class="phone-notch"></div>
-            <div class="camera-view">
-              <div class="camera-squishy"><span>★</span></div>
-              <div class="focus-corner tl"></div><div class="focus-corner tr"></div>
-              <div class="focus-corner bl"></div><div class="focus-corner br"></div>
-            </div>
-            <div class="phone-copy"><strong>NeeDoh Glow Ghost</strong><small>Target · Marlborough</small></div>
-            <div class="post-pill">POST SIGHTING</div>
-          </div>
-          <div class="upload-ring ring-one"></div>
-          <div class="upload-ring ring-two"></div>
-          <div class="floating-check">✓</div>
-        </div>
-
-        <div class="glass-card steps-card">
-          <div><b>1</b><span>Snap</span></div>
-          <i></i>
-          <div><b>2</b><span>Confirm</span></div>
-          <i></i>
-          <div><b>3</b><span>Help everyone</span></div>
-        </div>
-      </article>
-
-      <article class="slide" data-title="Keep It Fair">
-        <div class="copy-block">
-          <p class="eyebrow">COMMUNITY FIRST</p>
-          <h1>Find the squish.<br />Leave some joy.</h1>
-          <p class="lead">Accurate reporting, trusted members, and a no-hoarding culture keep the hunt fun.</p>
-        </div>
-
-        <div class="art-stage heart-art" aria-label="Collectors connected around a glowing heart">
-          <div class="orbit orbit-a"></div>
-          <div class="orbit orbit-b"></div>
-          <div class="heart-core">♡</div>
-          <div class="avatar avatar-one">C</div>
-          <div class="avatar avatar-two">E</div>
-          <div class="avatar avatar-three">S</div>
-          <div class="avatar avatar-four">★</div>
-          <div class="fair-badge"><span>✓</span> FAIR FINDER</div>
-        </div>
-
-        <div class="glass-card promise-card">
-          <p class="card-title">THE SQUISHY FAIR PROMISE</p>
-          <ul>
-            <li><span>✓</span> Report honestly</li>
-            <li><span>✓</span> Update sold-out shelves</li>
-            <li><span>✓</span> Save some for the next collector</li>
-          </ul>
-        </div>
-      </article>
+      <h3 class="section-title">Quick actions</h3>
+      <div class="action-grid">
+        <button class="action pink" data-open="map"><span>⌖</span><b>Find Squishies</b><small>Live radar</small></button>
+        <button class="action purple" data-open="report"><span>＋</span><b>Report Sighting</b><small>Help collectors</small></button>
+        <button class="action dark"><span>♡</span><b>My Collection</b><small>18 saved</small></button>
+        <button class="action dark"><span>♧</span><b>Alerts</b><small>2 active</small></button>
+      </div>
+      <div class="fresh-row"><h3 class="section-title">Fresh nearby</h3><button data-open="map">See all</button></div>
+      <div class="sighting glass" data-store="Five Below · Westborough"><div class="toy cow">★</div><div><b>Patty Cow spotted</b><span>Five Below · Westborough</span><small>Confirmed 8 min ago</small></div><strong>4 left</strong></div>
     </section>
 
-    <div class="bottom-actions">
-      <button class="primary-button" type="button" id="continueButton">Continue</button>
-      <p class="microcopy">Community-powered. Collector-approved.</p>
-    </div>
-
-    <section class="welcome-screen" aria-hidden="true">
-      <div class="welcome-mark">★</div>
-      <p class="eyebrow">WELCOME TO</p>
-      <h1>Squishy Fair</h1>
-      <p>Live sightings. Fair finds. Happy collectors.</p>
-      <button type="button" id="restartButton">Replay introduction</button>
+    <section class="screen map-screen" id="map">
+      <header class="map-header"><button class="back" data-open="home">‹</button><div><p class="eyebrow">LIVE RADAR</p><h2>Marlborough, MA</h2></div><button class="filter">⌁</button></header>
+      <div class="chips"><button class="active">All</button><button>Five Below</button><button>Target</button><button>Paper Store</button></div>
+      <div class="map-canvas">
+        <div class="roads r1"></div><div class="roads r2"></div><div class="roads r3"></div><div class="radar-wave rw1"></div><div class="radar-wave rw2"></div>
+        <button class="store-pin hot" style="left:48%;top:38%" data-store="Five Below · Westborough"><span>★</span><b>8m</b></button>
+        <button class="store-pin" style="left:22%;top:57%" data-store="Target · Marlborough"><span>★</span><b>22m</b></button>
+        <button class="store-pin dim" style="left:72%;top:62%" data-store="The Paper Store · Northborough"><span>★</span><b>1h</b></button>
+        <div class="you">YOU</div>
+      </div>
+      <div class="map-legend glass"><span><i class="hot-dot"></i>Fresh</span><span><i class="warm-dot"></i>Recent</span><span><i class="dim-dot"></i>Older</span></div>
     </section>
+
+    <section class="screen report" id="report">
+      <header class="map-header"><button class="back" data-open="home">‹</button><div><p class="eyebrow">ONE-TAP REPORT</p><h2>Share a sighting</h2></div><span></span></header>
+      <div class="camera-card">
+        <div class="camera-art"><div class="focus"></div><div class="camera-squish">★</div><p>Point your camera at the squishy shelf</p></div>
+        <button id="cameraButton">📸 Take photo</button>
+      </div>
+      <div class="report-fields glass">
+        <label>Store<select><option>Five Below · Westborough</option><option>Target · Marlborough</option><option>The Paper Store · Northborough</option></select></label>
+        <label>What did you find?<input value="Patty Cow" /></label>
+        <label>About how many?<div class="quantity"><button>-</button><strong id="qty">4</strong><button>+</button></div></label>
+      </div>
+      <button class="primary" id="postReport">Post live sighting</button>
+    </section>
+
+    <section class="sheet" id="storeSheet" aria-hidden="true">
+      <button class="close-sheet">×</button><p class="eyebrow">FRESH REPORT</p><h2 id="storeName">Five Below · Westborough</h2><p class="freshness">● Confirmed 8 minutes ago</p>
+      <div class="store-items"><div><span class="toy cow">★</span><b>Patty Cow</b><small>About 4 left</small></div><div><span class="toy axo">✦</span><b>Pink Axolotl</b><small>About 2 left</small></div></div>
+      <div class="sheet-actions"><button id="stillHere">✓ Still here</button><button id="soldOut">Sold out</button></div>
+    </section>
+
+    <nav class="bottom-nav" aria-label="Main navigation"><button class="active" data-open="home">⌂<span>Home</span></button><button data-open="map">⌖<span>Radar</span></button><button class="report-nav" data-open="report">＋</button><button>♡<span>Collection</span></button><button>♙<span>Profile</span></button></nav>
+    <div class="toast" id="toast"></div>
   </main>
-
   <script src="app.js"></script>
 </body>
 </html>
